@@ -4,22 +4,22 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 public class App {
-    private LocalDate Date;
+    private LocalDate date;
     private LocalTime time;
     private String description,vendor;
     private double amount;
 
-    public App(double amount, String vendor, LocalTime time, String description, LocalDate date) {
-        this.amount = amount;
-        this.vendor = vendor;
+    public App(LocalDate date, LocalTime time, String description, String vendor, double amount) {
+        this.date = date;
         this.time = time;
         this.description = description;
-        Date = date;
+        this.vendor = vendor;
+        this.amount = amount;
 
     }
 
     public LocalDate getDate() {
-        return Date;
+        return date;
     }
 
     public double getAmount() {
@@ -37,4 +37,11 @@ public class App {
     public LocalTime getTime() {
         return time;
     }
+
+    public String format() {
+        return date + "|" + time + "|" + description + "|" + vendor + "|" + amount;
+
+    }
+
 }
+
